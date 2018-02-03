@@ -91,7 +91,106 @@ int Binary(int loc)
 	}
 	return 0;
 }
+int Linear(int loc)
+{
 
+	int number = rand() % 64 + 1;
+	int count = 0;
+	int search;
+	int high = 64;
+	int low = 1;
+
+	bool found = false;
+
+	cout << "Welcome to War Games.\n";
+	cout << "Begin your search:\n\n";
+
+	while (found == false)
+	{
+		search = ((high - low) / 2) + low;
+		count++;
+
+		if (search > loc)
+		{
+			high = search - 1;
+			//cout << "==========================================================================\n";
+			//cout << "Target not found at " << search << ", initiating sonar ping\n";
+			//cout << "Moving to new location\n\n";
+		}
+		else if (search < loc)
+		{
+			low = search + 1;
+			//cout << "==========================================================================\n";
+			//cout << "Target not found at " << search << ", initiating sonar ping\n";
+			//cout << "Moving to new location\n\n";
+		}
+		else if (search == loc)
+		{
+			//cout << "===========================================================================\n";
+			cout << "Target Located at " << loc << ".  " << count << " units were searched.\n\n";
+			found = true;
+		}
+		else
+		{
+			//cout << "Critical error!\n";
+			//cout << "Recover drone for diagnostics.\n\n";
+			found = true;
+			cout << "Press Enter to continue./n";
+			cin.get();
+		}
+	}
+	return 0;
+}
+int Random(int loc)
+{
+
+	int number = rand() % 64 + 1;
+	int count = 0;
+	int search;
+	int high = 64;
+	int low = 1;
+
+	bool found = false;
+
+	cout << "Welcome to War Games.\n";
+	cout << "Begin your search:\n\n";
+
+	while (found == false)
+	{
+		search = ((high - low) / 2) + low;
+		count++;
+
+		if (search > loc)
+		{
+			high = search - 1;
+			//cout << "==========================================================================\n";
+			//cout << "Target not found at " << search << ", initiating sonar ping\n";
+			//cout << "Moving to new location\n\n";
+		}
+		else if (search < loc)
+		{
+			low = search + 1;
+			//cout << "==========================================================================\n";
+			//cout << "Target not found at " << search << ", initiating sonar ping\n";
+			//cout << "Moving to new location\n\n";
+		}
+		else if (search == loc)
+		{
+			//cout << "===========================================================================\n";
+			cout << "Target Located at " << loc << ".  " << count << " units were searched.\n\n";
+			found = true;
+		}
+		else
+		{
+			//cout << "Critical error!\n";
+			//cout << "Recover drone for diagnostics.\n\n";
+			found = true;
+			cout << "Press Enter to continue./n";
+			cin.get();
+		}
+	}
+	return 0;
+}
 
 int main()
 {
@@ -100,6 +199,8 @@ int main()
 	int location = rand() % 64 + 1; //Generate a Random Number between 1 & 64 as location
 //	Human(location);
 	Binary(location);
+	Linear(location);
+	Random(location);
 
 
 
