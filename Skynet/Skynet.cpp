@@ -45,7 +45,7 @@ int Binary(int loc)
 {
 
 	int number = rand() % 64 + 1;
-	int count;
+	int count = 0;
 	int search;
 	int high = 64;
 	int low = 1;
