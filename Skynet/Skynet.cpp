@@ -43,6 +43,7 @@ int Human(int loc)
 	cout << "Enemy located in " << count << " attempts\n";
 	cout << "\nPress Enter to continue.\n";
 	cin.get();
+//	Menu(0);
 	return 0;
 }
 int Binary(int loc)
@@ -66,30 +67,22 @@ int Binary(int loc)
 		if (search > loc)
 		{
 			high = search - 1;
-			//cout << "==========================================================================\n";
-			//cout << "Target not found at " << search << ", initiating sonar ping\n";
-			//cout << "Moving to new location\n\n";
+
 		}
 		else if (search < loc)
 		{
 			low = search + 1;
-			//cout << "==========================================================================\n";
-			//cout << "Target not found at " << search << ", initiating sonar ping\n";
-			//cout << "Moving to new location\n\n";
+
 		}
 		else if (search == loc)
 		{
-			//cout << "===========================================================================\n";
 			cout << "Target Located at " << loc << ".  " << count << " units were searched.\n\n";
 			found = true;
 		}
 		else
 		{
-			//cout << "Critical error!\n";
-			//cout << "Recover drone for diagnostics.\n\n";
 			found = true;
-			cout << "Press Enter to continue.\n";
-			cin.get();
+//			Menu(0);
 		}
 	}
 	return 0;
@@ -115,6 +108,7 @@ int Linear(int loc)
 
 	cout << "\nPress Enter to continue.\n";
 	cin.get();
+//	Menu(0);
 	return 0;
 }
 int Random(int loc)
@@ -136,21 +130,73 @@ int Random(int loc)
 	cout << "Number of Attempts to locate enemy\n" << count;
 	cout << "\nPress Enter to continue.\n";
 	cin.get();
+//	Menu(0);
 	return 0;
 }
 
 int main()
 {
 	srand(time(0)); //seeding random number generator
-
 	int location = rand() % 64 + 1; //Generate a Random Number between 1 & 64 as location
+
 	Human(location);
 	Binary(location);
 	Linear(location);
 	Random(location);
 
 
+/*
+	char menu_select;
+
+	cout << "===========================================================================\n";
+	cout << "|             Welcome to Skynet Search Program                            |\n"; 
+	cout << "|               Please enter a Selection below                            |\n";
+	cout << "===========================================================================\n";
+	cout << "|1. Select Manual Human Search                                            |\n";
+	cout << "|2. Select Superior Skynet Binary Search Protocol                         |\n";
+	cout << "|3. Select Linear Search Pattern                                          |\n";
+	cout << "|4. Select a random search pattern                                        |\n";
+	cout << "===========================================================================\n";
+	cin >> menu_select;
+
+	switch(menu_select)
+	{ 
+	case(1):Human(location);
+	case(2):Binary(location);
+	case(3):Linear(location);
+	case(4):Random(location);
+	default: cout << "Invalid Selection";
+	}
+*/
+
+
 
 	return 0;
 }
+/*
+int Menu(int loc)
+{
+	
+	char menu_select;
 
+	cout << "===========================================================================\n";
+	cout << "|             Welcome to Skynet Search Program                            |\n";
+	cout << "|               Please enter a Selection below                            |\n";
+	cout << "===========================================================================\n";
+	cout << "|1. Select Manual Human Search                                            |\n";
+	cout << "|2. Select Superior Skynet Binary Search Protocol                         |\n";
+	cout << "|3. Select Linear Search Pattern                                          |\n";
+	cout << "|4. Select a random search pattern                                        |\n";
+	cout << "===========================================================================\n";
+	cin >> menu_select;
+
+	switch (menu_select)
+	{
+	case(1):Human(loc);
+	case(2):Binary(loc);
+	case(3):Linear(loc);
+	case(4):Random(loc);
+	default: cout << "Invalid Selection";
+	}
+}
+*/
