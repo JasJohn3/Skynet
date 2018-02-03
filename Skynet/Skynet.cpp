@@ -120,8 +120,6 @@ int Random(int loc)
 {
 
 	int count = 0;
-	int max = 64;
-	int min= 1;
 	int number = rand() % 64 + 1;
 
 	
