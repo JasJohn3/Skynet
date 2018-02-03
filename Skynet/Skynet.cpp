@@ -8,7 +8,7 @@
 
 using namespace std; //used to allow std::cout & std::cin to be replaced with cin and cout
 
-
+//Human Search Function Location variable passed as argument loc into function
 int Human(int loc)
 {
 
@@ -20,6 +20,7 @@ int Human(int loc)
 	cout << "Welcome to War Games you will be competing against skynet.\n";
 	cout << "Enter a grid location between 1-64 to begin your search:\n\n";
 
+//Test search value against location value
 	while (found == false)
 	{
 		cin >> search;
@@ -46,6 +47,7 @@ int Human(int loc)
 //	Menu(0);
 	return 0;
 }
+//binary search function
 int Binary(int loc)
 {
 
@@ -61,7 +63,7 @@ int Binary(int loc)
 
 	while (found == false)
 	{
-		search = ((high - low) / 2) + low;
+		search = ((high - low) / 2) + low; //code that initiates the binary search.  It's voodoo.
 		count++;
 
 		if (search > loc)
@@ -87,6 +89,7 @@ int Binary(int loc)
 	}
 	return 0;
 }
+//Linear search functions, runs a while loop until search == loc
 int Linear(int loc)
 {
 
@@ -111,6 +114,8 @@ int Linear(int loc)
 //	Menu(0);
 	return 0;
 }
+
+//Random function that generates random numbers until search == loc
 int Random(int loc)
 {
 
@@ -145,6 +150,8 @@ int main()
 	Random(location);
 
 
+
+//need additional help with getting a switch case menu select function to work correctly.  Unable to call the function in each of the subsequent functions.  Will require clarification
 /*
 	char menu_select;
 
@@ -168,6 +175,7 @@ int main()
 	default: cout << "Invalid Selection";
 	}
 */
+
 
 
 
